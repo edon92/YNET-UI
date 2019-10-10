@@ -32,23 +32,3 @@ export default {
 ```
 :::
 
-### yn-container
-:::demo
-``` html
-<template>
-  <yn-container direction="vertical">
-    <div>我是container</div>
-  </yn-container>
-</template>
-<script>
-export default {
-  data () {
-    return {
-      value: '测试测试'
-    }
-  }
-}
-</script>
-```
-:::
-

@@ -5,7 +5,8 @@ import VueRouter from 'vue-router'
 import JY from '../lib'
 Vue.use(JY)
 import '../lib/theme/index.css';
-// import '../lib/theme/container.css';
+// import '../lib/theme/icon.css';
+// import './assets/font/iconfont.css'
 // 引入element-ui
 // import ElementUI from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css';

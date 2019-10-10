@@ -1,8 +1,22 @@
 .DS_Store
 node_modules/
+lib/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# 如果要发包，下面的东西都需要无视
+#build/
+#config/
+#dist/
+#examples/
+#src/
+#static/
+#test/
+#.babelrc
+#.postcssrc.js
+#components.json
+#package-lock.json
+#package.json
 
 # Editor directories and files
 .idea

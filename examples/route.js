@@ -2,6 +2,8 @@ import Install from './docs/install.md'
 import QuikeStart from './docs/quikeStart.md'
 import Input from './docs/input.md'
 import Button from './docs/button.md'
+import Container from './docs/container.md'
+import Icon from './docs/icon.md'
 const routes = [
   {
     path: '/',
@@ -27,7 +29,17 @@ const routes = [
     path: '/button',
     name: 'button',
     component: Button
-  }
+  },
+  {
+    path: '/container',
+    name: 'container',
+    component: Container
+  },
+  {
+    path: '/icon',
+    name: 'icon',
+    component: Icon
+  },
 ]
 
 export default routes

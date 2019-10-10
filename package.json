@@ -1,6 +1,6 @@
 {
   "name": "ynet-ui",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "description": "A Vue.js upload component",
   "author": "Edon",
   "private": false,
@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js",
+    "build": "rm -rf lib && node build/build.js",
     "build_example": "node build/build.js examples",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"
   },

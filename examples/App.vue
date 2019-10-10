@@ -6,12 +6,23 @@
       </yn-header>
       <yn-container>
         <yn-aside width="200px">
-          <!-- <menu-model></menu-model> -->
+          <div>
+            <router-link to="/guide/install">安装</router-link>
+          </div>
+          <div>
+            <router-link to="/guide/quikeStart">快速上手</router-link>
+          </div>
           <div>
             <router-link to="/input">Input组件</router-link>
           </div>
           <div>
             <router-link to="/button">Button组件</router-link>
+          </div>
+          <div>
+            <router-link to="/icon">icon组件</router-link>
+          </div>
+          <div>
+            <router-link to="/container">Container组件</router-link>
           </div>
         </yn-aside>
         <yn-main>
