@@ -1,0 +1,10 @@
+{
+  "input": "./src/components/input",
+  "button": "./src/components/button",
+  "container": "./src/components/container",
+  "header": "./src/components/header",
+  "main": "./src/components/main",
+  "footer": "./src/components/footer",
+  "aside": "./src/components/aside",
+  "index": "./src/index.js"
+}
