@@ -1,5 +1,5 @@
 @import '../../../style/common/var.scss';
-@import '../../../style/mixins/minxins.scss';
+@import '../../../style/mixins/mixins.scss';
 
 @include b(footer) {
   padding: $--footer-padding;

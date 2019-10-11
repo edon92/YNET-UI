@@ -2,7 +2,7 @@
 
 本节将介绍如何在项目中使用组件库。
 
-### 引入 JyRequiredImport
+### 引入 YNET-UI
 
 你可以引入整个 JyRequiredImport，或是根据需要仅引入部分组件。
 
@@ -12,11 +12,11 @@
 
 ```javascript
 import Vue from 'vue';
-import JyRequiredImport from 'jy-required-import';
-import 'jy-required-import/lib/theme/index.css';
+import YNETUI from 'ynet-ui';
+import 'ynet-ui/lib/theme/index.css';
 import App from './App.vue';
 
-Vue.use(JyRequiredImport);
+Vue.use(YNETUI);
 
 new Vue({
   el: '#app',
@@ -58,7 +58,7 @@ npm install babel-plugin-component -D
 
 ```javascript
 import Vue from 'vue';
-import { Input } from 'jy-required-import';
+import { Input } from 'ynet-ui';
 import App from './App.vue';
 
 Vue.component(Input.name, Input);

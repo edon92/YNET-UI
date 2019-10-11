@@ -504,6 +504,8 @@ $--tab-vertical-header-count-fill: $--color-text-secondary !default;
 /* Button
 -------------------------- */
 /// fontSize||Font|1
+$--border-style-dashed: dashed;
+$--button-border-style: $--border-style-dashed;
 $--button-font-size: $--font-size-base !default;
 /// fontWeight||Font|1
 $--button-font-weight: $--font-weight-primary !default;
