@@ -27,7 +27,7 @@
         </yn-aside>
         <yn-main>
           <router-view></router-view>
-          <yn-footer>Footer</yn-footer>
+          <yn-footer height="400px">Footer</yn-footer>
         </yn-main>
       </yn-container>
     </yn-container>

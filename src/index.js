@@ -1,5 +1,6 @@
 import Input from './components/input'
 import Button from './components/button'
+import ButtonGroup from './components/button/button-group'
 import Container from './components/container'
 import Header from './components/header'
 import Main from './components/main'
@@ -14,6 +15,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 function install (Vue) {
   Vue.component(Input.name, Input)
   Vue.component(Button.name, Button)
+  Vue.component(ButtonGroup.name, ButtonGroup)
   Vue.component(Container.name, Container)
   Vue.component(Header.name, Header)
   Vue.component(Main.name, Main)
@@ -26,6 +28,7 @@ export default {
   install,
   Input,
   Button,
+  ButtonGroup,
   Container,
   Header,
   Main,

@@ -849,5 +849,35 @@ input{color:#000;background-color:#FE9039
 .yn-icon-zhanghuzhifuxianeshezhi-copy:before {
   content: "\E6E4";
 }
+.yn-icon-loading {
+  -webkit-animation: rotating 2s linear infinite;
+          animation: rotating 2s linear infinite;
+}
+.yn-icon--right {
+  margin-left: 5px;
+}
+.yn-icon--left {
+  margin-right: 5px;
+}
+@-webkit-keyframes rotating {
+0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+}
+100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+}
+}
+@keyframes rotating {
+0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+}
+100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+}
+}
 
 /*# sourceMappingURL=index.css.map*/
