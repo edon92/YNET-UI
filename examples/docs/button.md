@@ -90,6 +90,17 @@ export default {
 ```
 :::
 
+### 长Button
+给button添加block属性来定义 Button 的样式。
+:::demo 给button添加block属性来定义 Button 的样式。
+
+```html
+<div class="ynButton">
+  <yn-button type="primary" block>主要按钮</yn-button>
+</div>
+```
+:::
+
 ## ButtonGroup
 
 基本用法

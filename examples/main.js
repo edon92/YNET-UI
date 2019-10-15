@@ -2,8 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 // 引入组件
-import JY from '../lib'
-Vue.use(JY)
+import YnetUI from '../lib'
+Vue.use(YnetUI)
 import '../lib/theme/index.css';
 // import '../lib/theme/icon.css';
 // import './assets/font/iconfont.css'

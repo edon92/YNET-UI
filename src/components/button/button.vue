@@ -14,7 +14,8 @@
         'is-plain': plain,
         'is-round': round,
         'is-circle': circle,
-        'is-dashed': dashed
+        'is-dashed': dashed,
+        'is-block': block
       }
     ]"
   >
@@ -56,7 +57,8 @@
       autofocus: Boolean,
       round: Boolean,
       circle: Boolean,
-      dashed: Boolean
+      dashed: Boolean,
+      block: Boolean
     },
 
     computed: {

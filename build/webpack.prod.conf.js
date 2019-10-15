@@ -44,6 +44,16 @@ const webpackConfig = merge(baseWebpackConfig, {
       amd: 'vue'
     }
   },
+  resolve: {
+    extensions: ['.js', '.vue', '.json','.scss'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, 'src'),
+      '~': path.resolve(__dirname, 'packages'),
+      '@mixins': path.resolve(__dirname, 'src/mixins'),
+      '@utils': path.resolve(__dirname, 'src/utils')
+    }
+  },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({

@@ -101,6 +101,9 @@
   @include when(dashed) {
     border-style: $--border-style-dashed;
   }
+  @include when(block) {
+    width: 100%;
+  }
 
   @include when(loading) {
     position: relative;

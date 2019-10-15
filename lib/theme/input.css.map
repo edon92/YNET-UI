@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/components/input/input.vue"],"names":[],"mappings":";AACA,MAAM,WAAW,wBAAwB;CACxC","file":"/theme/input.css","sourcesContent":["\ninput{color:#000;background-color:#FE9039\n}\n\n\n\n// WEBPACK FOOTER //\n// ./src/components/input/input.vue"],"sourceRoot":""}

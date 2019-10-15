@@ -7,6 +7,8 @@ import Main from './components/main'
 import Footer from './components/footer'
 import Aside from './components/aside'
 import Icon from './components/icon'
+import Radio from './components/radio'
+import RadioGroup from './components/radio/radio-group'
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(install)
@@ -22,6 +24,8 @@ function install (Vue) {
   Vue.component(Footer.name, Footer)
   Vue.component(Aside.name, Aside)
   Vue.component(Icon.name, Icon)
+  Vue.component(Radio.name, Radio)
+  Vue.component(RadioGroup.name, RadioGroup)
 }
 
 export default {
@@ -35,4 +39,6 @@ export default {
   Footer,
   Aside,
   Icon,
+  Radio,
+  RadioGroup,
 }

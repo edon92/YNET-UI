@@ -4,6 +4,7 @@ import Input from './docs/input.md'
 import Button from './docs/button.md'
 import Container from './docs/container.md'
 import Icon from './docs/icon.md'
+import Radio from './docs/radio.md'
 const routes = [
   {
     path: '/',
@@ -39,6 +40,11 @@ const routes = [
     path: '/icon',
     name: 'icon',
     component: Icon
+  },
+  {
+    path: '/radio',
+    name: 'radio',
+    component: Radio
   },
 ]
 

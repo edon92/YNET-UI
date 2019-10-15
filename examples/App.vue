@@ -22,6 +22,9 @@
             <router-link to="/icon">icon组件</router-link>
           </div>
           <div>
+            <router-link to="/radio">Radio组件</router-link>
+          </div>
+          <div>
             <router-link to="/container">Container组件</router-link>
           </div>
         </yn-aside>

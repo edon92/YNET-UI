@@ -7,5 +7,7 @@
   "footer": "./src/components/footer",
   "aside": "./src/components/aside",
   "icon": "./src/components/icon",
+  "radio": "./src/components/radio",
+  "radio-group": "./src/components/radio/radio-group",
   "index": "./src/index.js"
 }
