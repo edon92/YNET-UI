@@ -1,6 +1,7 @@
 {
   "input": "./src/components/input",
   "button": "./src/components/button",
+  "button-group": "./src/components/button-group",
   "container": "./src/components/container",
   "header": "./src/components/header",
   "main": "./src/components/main",
@@ -8,6 +9,7 @@
   "aside": "./src/components/aside",
   "icon": "./src/components/icon",
   "radio": "./src/components/radio",
-  "radio-group": "./src/components/radio/radio-group",
+  "radio-group": "./src/components/radio-group",
+  "radio-button": "./src/components/radio-button",
   "index": "./src/index.js"
 }
