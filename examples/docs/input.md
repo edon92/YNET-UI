@@ -6,7 +6,7 @@
 export default {
   data () {
     return {
-      value: '测试测试'
+      input: '测试测试'
     }
   }
 }
@@ -15,16 +15,13 @@ export default {
 介绍Input的使用
 :::demo
 ``` html
-<template>
-  <jy-input
-    :value="value"
-  ></jy-input>
-</template>
+<yn-input v-model="input" placeholder="请输入内容"></yn-input>
+
 <script>
 export default {
-  data () {
+  data() {
     return {
-      value: '测试测试'
+      input: ''
     }
   }
 }
@@ -32,3 +29,24 @@ export default {
 ```
 :::
 
+## Input Disbaled
+
+:::demo
+```html
+<yn-input
+  placeholder="请输入内容"
+  v-model="input"
+  :disabled="true">
+</yn-input>
+
+<script>
+export default {
+  data() {
+    return {
+      input: ''
+    }
+  }
+}
+```
+</script>
+:::
