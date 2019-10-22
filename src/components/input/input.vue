@@ -105,11 +105,10 @@
   </div>
 </template>
 <script>
-  import emitter from '../../mixins/emitter';
-  import Migrating from '../../mixins/migrating';
+  import emitter from 'mixins/emitter';
+  import Migrating from 'mixins/migrating';
   import calcTextareaHeight from './calcTextareaHeight';
-  import merge from '../../utils/merge';
-
+  import merge from 'utils/merge';
   export default {
     name: 'YnInput',
 
@@ -417,6 +416,3 @@
     }
   };
 </script>
-<style lang="scss">
-@import './style/index.scss';
-</style>

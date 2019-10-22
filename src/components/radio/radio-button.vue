@@ -35,7 +35,7 @@
   </label>
 </template>
 <script>
-  import Emitter from '../../mixins/emitter';
+  import Emitter from 'mixins/emitter';
 
   export default {
     name: 'YnRadioButton',
@@ -112,6 +112,3 @@
     }
   };
 </script>
-<style lang="scss">
-@import './style/radio-button.scss';
-</style>

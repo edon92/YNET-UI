@@ -11,6 +11,3 @@
     }
   };
 </script>
-<style lang="scss">
-@import './style/font/iconfont.css';
-</style>

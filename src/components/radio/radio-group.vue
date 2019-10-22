@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-  import Emitter from '../../mixins/emitter';
+  import Emitter from 'mixins/emitter';
 
   const keyCode = Object.freeze({
     LEFT: 37,
@@ -104,8 +104,3 @@
     }
   };
 </script>
-<style lang="scss">
-@import './style/radio-group.scss';
-</style>
-
-

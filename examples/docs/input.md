@@ -11,7 +11,7 @@ export default {
   }
 }
 </script>
-## Input
+### Input
 介绍Input的使用
 :::demo
 ``` html
@@ -29,7 +29,7 @@ export default {
 ```
 :::
 
-## Input Disbaled
+### Input Disbaled
 
 :::demo
 ```html
@@ -39,7 +39,7 @@ export default {
   :disabled="true">
 </yn-input>
 
-<script>
+<script>s
 export default {
   data() {
     return {

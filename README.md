@@ -1,72 +1,38 @@
 # YNET-UI 目录说明
 ```js
-.
+
+├── README.md
 ├── build // webpack配置
+├── components.json
 ├── config // webpack配置
-├── dist // examples 生产环境打包
-│   └── static
-│       ├── css
-│       ├── fonts
-│       └── js
 ├── examples // 案例演示目录
+│   ├── App.vue
 │   ├── assets
-│   │   ├── font
-│   │   └── less
 │   ├── components
-│   └── docs
-├── lib // 最终上传npm的库
-│   ├── fonts
-│   └── theme
-├── src // 组件源码
-│   ├── components
-│   │   ├── aside // aside组件js部分
-│   │   │   └── style // aside组件css部分
-│   │   ├── button
-│   │   │   └── style
-│   │   ├── container
-│   │   │   └── style
-│   │   ├── footer
-│   │   │   └── style
-│   │   ├── header
-│   │   │   └── style
-│   │   ├── icon
-│   │   │   └── style
-│   │   │       └── font
-│   │   ├── input
-│   │   │   └── style
-│   │   ├── main
-│   │   │   └── style
-│   │   └── radio
-│   │       └── style
-│   ├── index.js // 所有组件入口
-│   ├── mixins // 工具函数
-│   └── style // scss公共模块
-│       ├── common
-│       └── mixins
-├── static
-├── components.json // 组件隐射json文件，webpack打包用
-└── test // 单元测试文件
-    ├── e2e
-    │   ├── custom-assertions
-    │   └── specs
-    └── unit
-        ├── coverage
-        │   └── lcov-report
-        └── specs
+│   │   ├── demoBlock.vue // 演示组件
+│   │   ├── header.vue
+│   │   └── menu.vue
+│   ├── docs // 演示构建组件
+│   │   ├── button.md
+│   │   ├── container.md
+│   │   ├── icon.md
+│   │   ├── input-number.md
+│   │   ├── input.md
+│   │   ├── install.md
+│   │   ├── quikeStart.md
+│   │   └── radio.md
+│   ├── index.html
+│   ├── main.js
+│   └── route.js
+├── src
+│   ├── commonJs // 公共js函数
+│   ├── components // 组件源码
+│   ├── ....
+│   │   └── theme // 组件样式
+│   │       ├── common
+│   │       ├── mixins
+│   │       ├── font
+│   │       ├── input.scss // 样式入口文件
+│   ├── index.js // 组件入口文件
+├── ynetUI // 最终上传的库
 ```
-# Getting started
-
-```js
-
-# 下载本地
-git clone https://github.com/edon92/YNET-UI.git
-
-# 打包组件库
-npm run build
-
-# 在线查看文档
-npm run dev
-
-```
-
-

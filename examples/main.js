@@ -2,9 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 // 引入组件
-import YnetUI from '../lib'
+import YnetUI from '../ynetUI'
 Vue.use(YnetUI)
-import '../lib/theme/index.css';
+import '../ynetUI/theme/index.css';
 // import '../lib/theme/icon.css';
 // import './assets/font/iconfont.css'
 // 引入element-ui

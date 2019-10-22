@@ -1,5 +1,6 @@
 {
   "input": "./src/components/input",
+  "input-number": "./src/components/input-number",
   "button": "./src/components/button",
   "button-group": "./src/components/button-group",
   "container": "./src/components/container",
@@ -11,5 +12,7 @@
   "radio": "./src/components/radio",
   "radio-group": "./src/components/radio-group",
   "radio-button": "./src/components/radio-button",
+  "scrollbar": "./src/components/scrollbar",
+  "tag": "./src/components/tag",
   "index": "./src/index.js"
 }

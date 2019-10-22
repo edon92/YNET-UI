@@ -16,6 +16,9 @@
             <router-link to="/input">Input组件</router-link>
           </div>
           <div>
+            <router-link to="/inputNumber">Input-number组件</router-link>
+          </div>
+          <div>
             <router-link to="/button">Button组件</router-link>
           </div>
           <div>

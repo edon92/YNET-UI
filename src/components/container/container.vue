@@ -33,6 +33,3 @@
     }
   };
 </script>
-<style lang="scss">
-@import './style/index.scss';
-</style>

@@ -1,4 +1,5 @@
 import Input from './components/input'
+import InputNumber from './components/input-number'
 import Button from './components/button'
 import ButtonGroup from './components/button/button-group'
 import Container from './components/container'
@@ -10,6 +11,8 @@ import Icon from './components/icon'
 import Radio from './components/radio'
 import RadioGroup from './components/radio-group'
 import RadioButton from './components/radio-button'
+import ScrollBar from './components/scrollbar'
+import Tag from './components/tag'
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(install)
@@ -28,6 +31,9 @@ function install (Vue) {
   Vue.component(Radio.name, Radio)
   Vue.component(RadioGroup.name, RadioGroup)
   Vue.component(RadioButton.name, RadioButton)
+  Vue.component(InputNumber.name, InputNumber)
+  Vue.component(ScrollBar.name, ScrollBar)
+  Vue.component(Tag.name, Tag)
 }
 
 export default {
@@ -44,4 +50,7 @@ export default {
   Radio,
   RadioGroup,
   RadioButton,
+  InputNumber,
+  ScrollBar,
+  Tag,
 }
