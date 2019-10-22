@@ -6,7 +6,7 @@
 export default {
   data () {
     return {
-      input: '测试测试'
+      input: '测试'
     }
   }
 }
