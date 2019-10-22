@@ -1,6 +1,6 @@
 {
   "name": "ynet-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Vue.js upload component",
   "author": "Edon",
   "private": false,
@@ -15,7 +15,7 @@
     "component-required",
     "ynet-ui"
   ],
-  "main": "lib/index.js",
+  "main": "ynet/index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -28,6 +28,7 @@
     "babel-plugin-component": "^1.1.1",
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.6",
+    "throttle-debounce": "^1.0.1",
     "user": "0.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

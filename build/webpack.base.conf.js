@@ -6,6 +6,7 @@ const vueLoaderConfig = require('./vue-loader.conf')
 const striptags = require('./strip-tags')
 const md = require('markdown-it')()
 
+console.log('baseWebpackConfig')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -36,8 +37,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve('../src'),
+      'vue': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, '../src'),
       mixins: path.resolve(__dirname, '../src/commonJs/mixins/'),
       utils: path.resolve(__dirname, '../src/commonJs/utils/'),
       directives: path.resolve(__dirname, '../src/commonJs/directives/'),
@@ -96,9 +97,10 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
+        test: /\.js(x)*$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('packages'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        exclude: /node_modules|utils\/popper\.js|utils\/date\.js/,
+        include: [resolve('src'), resolve('packages'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

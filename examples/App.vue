@@ -30,6 +30,9 @@
           <div>
             <router-link to="/container">Container组件</router-link>
           </div>
+          <div>
+            <router-link to="/navMenu">navMenu组件</router-link>
+          </div>
         </yn-aside>
         <yn-main>
           <router-view></router-view>

@@ -13,6 +13,11 @@ import RadioGroup from './components/radio-group'
 import RadioButton from './components/radio-button'
 import ScrollBar from './components/scrollbar'
 import Tag from './components/tag'
+import Menu from './components/menu'
+import MenuItem from './components/menu/menu-item'
+import MenuItemGroup from './components/menu/menu-item-group'
+import Submenu from './components/menu/submenu'
+import Tooltip from './components/tooltip'
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(install)
@@ -34,6 +39,11 @@ function install (Vue) {
   Vue.component(InputNumber.name, InputNumber)
   Vue.component(ScrollBar.name, ScrollBar)
   Vue.component(Tag.name, Tag)
+  Vue.component(Menu.name, Menu)
+  Vue.component(MenuItem.name, MenuItem)
+  Vue.component(MenuItemGroup.name, MenuItemGroup)
+  Vue.component(Submenu.name, Submenu)
+  Vue.component(Tooltip.name, Tooltip)
 }
 
 export default {
@@ -53,4 +63,9 @@ export default {
   InputNumber,
   ScrollBar,
   Tag,
+  Menu,
+  MenuItem,
+  MenuItemGroup,
+  Submenu,
+  Tooltip
 }

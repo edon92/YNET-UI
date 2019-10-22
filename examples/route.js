@@ -6,6 +6,7 @@ import Button from './docs/button.md'
 import Container from './docs/container.md'
 import Icon from './docs/icon.md'
 import Radio from './docs/radio.md'
+import NavMenu from './docs/navMenu.md'
 const routes = [
   {
     path: '/',
@@ -51,6 +52,11 @@ const routes = [
     path: '/radio',
     name: 'radio',
     component: Radio
+  },
+  {
+    path: '/navMenu',
+    name: 'navMenu',
+    component: NavMenu
   },
 ]
 
