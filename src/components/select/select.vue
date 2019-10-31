@@ -1,35 +1,35 @@
 <template>
   <div
-    class="el-select"
-    :class="[selectSize ? 'el-select--' + selectSize : '']"
+    class="yn-select"
+    :class="[selectSize ? 'yn-select--' + selectSize : '']"
     @click.stop="toggleMenu"
     v-clickoutside="handleClose">
     <div
-      class="el-select__tags"
+      class="yn-select__tags"
       v-if="multiple"
       ref="tags"
       :style="{ 'max-width': inputWidth - 32 + 'px', width: '100%' }">
       <span v-if="collapseTags && selected.length">
-        <el-tag
+        <yn-tag
           :closable="!selectDisabled"
           :size="collapseTagSize"
           :hit="selected[0].hitState"
           type="info"
           @close="deleteTag($event, selected[0])"
           disable-transitions>
-          <span class="el-select__tags-text">{{ selected[0].currentLabel }}</span>
-        </el-tag>
-        <el-tag
+          <span class="yn-select__tags-text">{{ selected[0].currentLabel }}</span>
+        </yn-tag>
+        <yn-tag
           v-if="selected.length > 1"
           :closable="false"
           :size="collapseTagSize"
           type="info"
           disable-transitions>
-          <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
-        </el-tag>
+          <span class="yn-select__tags-text">+ {{ selected.length - 1 }}</span>
+        </yn-tag>
       </span>
       <transition-group @after-leave="resetInputHeight" v-if="!collapseTags">
-        <el-tag
+        <yn-tag
           v-for="item in selected"
           :key="getValueKey(item)"
           :closable="!selectDisabled"
@@ -38,13 +38,13 @@
           type="info"
           @close="deleteTag($event, item)"
           disable-transitions>
-          <span class="el-select__tags-text">{{ item.currentLabel }}</span>
-        </el-tag>
+          <span class="yn-select__tags-text">{{ item.currentLabel }}</span>
+        </yn-tag>
       </transition-group>
 
       <input
         type="text"
-        class="el-select__input"
+        class="yn-select__input"
         :class="[selectSize ? `is-${ selectSize }` : '']"
         :disabled="selectDisabled"
         :autocomplete="autoComplete || autocomplete"
@@ -67,7 +67,7 @@
         :style="{ 'flex-grow': '1', width: inputLength / (inputWidth - 32) + '%', 'max-width': inputWidth - 42 + 'px' }"
         ref="input">
     </div>
-    <el-input
+    <yn-input
       ref="reference"
       v-model="selectedLabel"
       type="text"
@@ -95,74 +95,75 @@
         <slot name="prefix"></slot>
       </template>
       <template slot="suffix">
-        <i v-show="!showClose" :class="['el-select__caret', 'el-input__icon', 'el-icon-' + iconClass]"></i>
-        <i v-if="showClose" class="el-select__caret el-input__icon el-icon-circle-close" @click="handleClearClick"></i>
+        <i v-show="!showClose" :class="['yn-select__caret', 'yn-input__icon', 'yn-icon-' + iconClass]"></i>
+        <i v-if="showClose" class="yn-select__caret yn-input__icon yn-icon-circle-close" @click="handleClearClick"></i>
       </template>
-    </el-input>
+    </yn-input>
     <transition
-      name="el-zoom-in-top"
+      name="yn-zoom-in-top"
       @before-enter="handleMenuEnter"
       @after-leave="doDestroy">
-      <el-select-menu
+      <yn-select-menu
         ref="popper"
         :append-to-body="popperAppendToBody"
         v-show="visible && emptyText !== false">
-        <el-scrollbar
+        <yn-scrollbar
           tag="ul"
-          wrap-class="el-select-dropdown__wrap"
-          view-class="el-select-dropdown__list"
+          wrap-class="yn-select-dropdown__wrap"
+          view-class="yn-select-dropdown__list"
           ref="scrollbar"
           :class="{ 'is-empty': !allowCreate && query && filteredOptionsCount === 0 }"
           v-show="options.length > 0 && !loading">
-          <el-option
+          <yn-option
             :value="query"
             created
             v-if="showNewOption">
-          </el-option>
+          </yn-option>
           <slot></slot>
-        </el-scrollbar>
+        </yn-scrollbar>
         <template v-if="emptyText && (!allowCreate || loading || (allowCreate && options.length === 0 ))">
           <slot name="empty" v-if="$slots.empty"></slot>
-          <p class="el-select-dropdown__empty" v-else>
+          <p class="yn-select-dropdown__empty" v-else>
             {{ emptyText }}
           </p>
         </template>
-      </el-select-menu>
+      </yn-select-menu>
     </transition>
   </div>
 </template>
 
 <script type="text/babel">
-  import Emitter from 'element-ui/src/mixins/emitter';
-  import Focus from 'element-ui/src/mixins/focus';
-  import Locale from 'element-ui/src/mixins/locale';
-  import ElInput from 'element-ui/packages/input';
-  import ElSelectMenu from './select-dropdown.vue';
-  import ElOption from './option.vue';
-  import ElTag from 'element-ui/packages/tag';
-  import ElScrollbar from 'element-ui/packages/scrollbar';
+  import Emitter from 'mixins/emitter';
+  import Focus from 'mixins/focus';
+  // import Locale from 'mixins/locale';
+  import YnInput from '../input';
+  import YnSelectMenu from './select-dropdown.vue';
+  import YnOption from './option.vue';
+  import YnTag from '../tag';
+  import YnScrollbar from '../scrollbar';
   import debounce from 'throttle-debounce/debounce';
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
-  import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
-  import { t } from 'element-ui/src/locale';
-  import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
-  import { getValueByPath, valueEquals, isIE, isEdge } from 'element-ui/src/utils/util';
+  import Clickoutside from 'utils/clickoutside';
+  import { addResizeListener, removeResizeListener } from 'utils/resize-event';
+  // import { t } from 'locale';
+  import scrollIntoView from 'utils/scroll-into-view';
+  import { getValueByPath, valueEquals, isIE, isEdge } from 'utils/util';
   import NavigationMixin from './navigation-mixin';
-  import { isKorean } from 'element-ui/src/utils/shared';
+  import { isKorean } from 'utils/shared';
 
   export default {
-    mixins: [Emitter, Locale, Focus('reference'), NavigationMixin],
+    // mixins: [Emitter, Locale, Focus('reference'), NavigationMixin],
+    mixins: [Emitter, Focus('reference'), NavigationMixin],
 
-    name: 'ElSelect',
+    name: 'YnSelect',
 
-    componentName: 'ElSelect',
+    componentName: 'YnSelect',
 
     inject: {
-      elForm: {
+      ynForm: {
         default: ''
       },
 
-      elFormItem: {
+      ynFormItem: {
         default: ''
       }
     },
@@ -174,8 +175,8 @@
     },
 
     computed: {
-      _elFormItemSize() {
-        return (this.elFormItem || {}).elFormItemSize;
+      _ynFormItemSize() {
+        return (this.ynFormItem || {}).ynFormItemSize;
       },
 
       readonly() {
@@ -203,14 +204,17 @@
 
       emptyText() {
         if (this.loading) {
-          return this.loadingText || this.t('el.select.loading');
+          return this.loadingText || '加载中';
+          // return this.loadingText || this.t('el.select.loading');
         } else {
           if (this.remote && this.query === '' && this.options.length === 0) return false;
           if (this.filterable && this.query && this.options.length > 0 && this.filteredOptionsCount === 0) {
-            return this.noMatchText || this.t('el.select.noMatch');
+            // return this.noMatchText || this.t('el.select.noMatch');
+            return this.noMatchText || '无匹配数据';
           }
           if (this.options.length === 0) {
-            return this.noDataText || this.t('el.select.noData');
+            // return this.noDataText || this.t('el.select.noData');
+            return this.noDataText || '暂无数据';
           }
         }
         return null;
@@ -223,11 +227,11 @@
       },
 
       selectSize() {
-        return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
+        return this.size || this._ynFormItemSize || (this.$ELEMENT || {}).size;
       },
 
       selectDisabled() {
-        return this.disabled || (this.elForm || {}).disabled;
+        return this.disabled || (this.ynForm || {}).disabled;
       },
 
       collapseTagSize() {
@@ -238,11 +242,11 @@
     },
 
     components: {
-      ElInput,
-      ElSelectMenu,
-      ElOption,
-      ElTag,
-      ElScrollbar
+      YnInput,
+      YnSelectMenu,
+      YnOption,
+      YnTag,
+      YnScrollbar
     },
 
     directives: { Clickoutside },
@@ -262,7 +266,7 @@
         type: String,
         validator(val) {
           process.env.NODE_ENV !== 'production' &&
-            console.warn('[Element Warn][Select]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
+            console.warn('[Warn][Select]\'auto-complete\' property will be deprecated in next major version. please use \'autocomplete\' instead.');
           return true;
         }
       },
@@ -288,7 +292,8 @@
       placeholder: {
         type: String,
         default() {
-          return t('el.select.placeholder');
+          // return t('el.select.placeholder');
+          return '请选择';
         }
       },
       defaultFirstOption: Boolean,
@@ -360,13 +365,13 @@
           this.inputLength = 20;
         }
         if (!valueEquals(val, oldVal)) {
-          this.dispatch('ElFormItem', 'el.form.change', val);
+          this.dispatch('YnFormItem', 'yn.form.change', val);
         }
       },
 
       visible(val) {
         if (!val) {
-          this.broadcast('ElSelectDropdown', 'destroyPopper');
+          this.broadcast('YnSelectDropdown', 'destroyPopper');
           if (this.$refs.input) {
             this.$refs.input.blur();
           }
@@ -399,7 +404,7 @@
             }
           }
         } else {
-          this.broadcast('ElSelectDropdown', 'updatePopper');
+          this.broadcast('YnSelectDropdown', 'updatePopper');
           if (this.filterable) {
             this.query = this.remote ? '' : this.selectedLabel;
             this.handleQueryChange(this.query);
@@ -407,8 +412,8 @@
               this.$refs.input.focus();
             } else {
               if (!this.remote) {
-                this.broadcast('ElOption', 'queryChange', '');
-                this.broadcast('ElOptionGroup', 'queryChange');
+                this.broadcast('YnOption', 'queryChange', '');
+                this.broadcast('YnOptionGroup', 'queryChange');
               }
 
               if (this.selectedLabel) {
@@ -424,7 +429,7 @@
       options() {
         if (this.$isServer) return;
         this.$nextTick(() => {
-          this.broadcast('ElSelectDropdown', 'updatePopper');
+          this.broadcast('YnSelectDropdown', 'updatePopper');
         });
         if (this.multiple) {
           this.resetInputHeight();
@@ -461,7 +466,7 @@
         }
         this.previousQuery = val;
         this.$nextTick(() => {
-          if (this.visible) this.broadcast('ElSelectDropdown', 'updatePopper');
+          if (this.visible) this.broadcast('YnSelectDropdown', 'updatePopper');
         });
         this.hoverIndex = -1;
         if (this.multiple && this.filterable) {
@@ -477,11 +482,11 @@
           this.remoteMethod(val);
         } else if (typeof this.filterMethod === 'function') {
           this.filterMethod(val);
-          this.broadcast('ElOptionGroup', 'queryChange');
+          this.broadcast('YnOptionGroup', 'queryChange');
         } else {
           this.filteredOptionsCount = this.optionsCount;
-          this.broadcast('ElOption', 'queryChange', val);
-          this.broadcast('ElOptionGroup', 'queryChange');
+          this.broadcast('YnOption', 'queryChange', val);
+          this.broadcast('YnOptionGroup', 'queryChange');
         }
         if (this.defaultFirstOption && (this.filterable || this.remote) && this.filteredOptionsCount) {
           this.checkDefaultFirstOption();
@@ -491,7 +496,7 @@
       scrollToOption(option) {
         const target = Array.isArray(option) && option[0] ? option[0].$el : option.$el;
         if (this.$refs.popper && target) {
-          const menu = this.$refs.popper.$el.querySelector('.el-select-dropdown__wrap');
+          const menu = this.$refs.popper.$el.querySelector('.yn-select-dropdown__wrap');
           scrollIntoView(menu, target);
         }
         this.$refs.scrollbar && this.$refs.scrollbar.handleScroll();
@@ -652,7 +657,7 @@
               sizeInMap
             ) + 'px';
           if (this.visible && this.emptyText !== false) {
-            this.broadcast('ElSelectDropdown', 'updatePopper');
+            this.broadcast('YnSelectDropdown', 'updatePopper');
           }
         });
       },

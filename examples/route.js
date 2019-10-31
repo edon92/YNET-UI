@@ -7,6 +7,7 @@ import Container from './docs/container.md'
 import Icon from './docs/icon.md'
 import Radio from './docs/radio.md'
 import NavMenu from './docs/navMenu.md'
+import Select from './docs/select.md'
 const routes = [
   {
     path: '/',
@@ -57,6 +58,11 @@ const routes = [
     path: '/navMenu',
     name: 'navMenu',
     component: NavMenu
+  },
+  {
+    path: '/select',
+    name: 'select',
+    component: Select
   },
 ]
 

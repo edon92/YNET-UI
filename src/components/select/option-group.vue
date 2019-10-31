@@ -1,8 +1,8 @@
 <template>
-  <ul class="el-select-group__wrap" v-show="visible">
-    <li class="el-select-group__title">{{ label }}</li>
+  <ul class="yn-select-group__wrap" v-show="visible">
+    <li class="yn-select-group__title">{{ label }}</li>
     <li>
-      <ul class="el-select-group">
+      <ul class="yn-select-group">
         <slot></slot>
       </ul>
     </li>
@@ -10,14 +10,14 @@
 </template>
 
 <script type="text/babel">
-  import Emitter from 'element-ui/src/mixins/emitter';
+  import Emitter from 'mixins/emitter';
 
   export default {
     mixins: [Emitter],
 
-    name: 'ElOptionGroup',
+    name: 'YnOptionGroup',
 
-    componentName: 'ElOptionGroup',
+    componentName: 'YnOptionGroup',
 
     props: {
       label: String,
@@ -35,7 +35,7 @@
 
     watch: {
       disabled(val) {
-        this.broadcast('ElOption', 'handleGroupDisabled', val);
+        this.broadcast('YnOption', 'handleGroupDisabled', val);
       }
     },
 
@@ -53,7 +53,7 @@
 
     mounted() {
       if (this.disabled) {
-        this.broadcast('ElOption', 'handleGroupDisabled', this.disabled);
+        this.broadcast('YnOption', 'handleGroupDisabled', this.disabled);
       }
     }
   };

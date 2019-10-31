@@ -18,6 +18,11 @@ import MenuItem from './components/menu/menu-item'
 import MenuItemGroup from './components/menu/menu-item-group'
 import Submenu from './components/menu/submenu'
 import Tooltip from './components/tooltip'
+import Collapse from './components/collapse'
+import CollapseItem from './components/collapse-item'
+import Option from './components/option'
+import OptionGroup from './components/option-group'
+import Select from './components/select'
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(install)
@@ -44,6 +49,11 @@ function install (Vue) {
   Vue.component(MenuItemGroup.name, MenuItemGroup)
   Vue.component(Submenu.name, Submenu)
   Vue.component(Tooltip.name, Tooltip)
+  Vue.component(Collapse.name, Collapse)
+  Vue.component(CollapseItem.name, CollapseItem)
+  Vue.component(Option.name, Option)
+  Vue.component(OptionGroup.name, OptionGroup)
+  Vue.component(Select.name, Select)
 }
 
 export default {
@@ -67,5 +77,10 @@ export default {
   MenuItem,
   MenuItemGroup,
   Submenu,
-  Tooltip
+  Tooltip,
+  Collapse,
+  CollapseItem,
+  Option,
+  OptionGroup,
+  Select,
 }

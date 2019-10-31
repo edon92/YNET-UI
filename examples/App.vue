@@ -6,33 +6,7 @@
       </yn-header>
       <yn-container>
         <yn-aside width="200px">
-          <div>
-            <router-link to="/guide/install">安装</router-link>
-          </div>
-          <div>
-            <router-link to="/guide/quikeStart">快速上手</router-link>
-          </div>
-          <div>
-            <router-link to="/input">Input组件</router-link>
-          </div>
-          <div>
-            <router-link to="/inputNumber">Input-number组件</router-link>
-          </div>
-          <div>
-            <router-link to="/button">Button组件</router-link>
-          </div>
-          <div>
-            <router-link to="/icon">icon组件</router-link>
-          </div>
-          <div>
-            <router-link to="/radio">Radio组件</router-link>
-          </div>
-          <div>
-            <router-link to="/container">Container组件</router-link>
-          </div>
-          <div>
-            <router-link to="/navMenu">navMenu组件</router-link>
-          </div>
+          <menu-model></menu-model>
         </yn-aside>
         <yn-main>
           <router-view></router-view>
@@ -50,11 +24,11 @@
 
 <script>
 import HeaderModel from './components/header'
-// import MenuModel from './components/menu'
+import MenuModel from './components/menu'
 export default {
   components: {
     HeaderModel,
-    // MenuModel
+    MenuModel
   },
   data() {
     return {

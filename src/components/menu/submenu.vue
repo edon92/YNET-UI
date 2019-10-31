@@ -1,5 +1,5 @@
 <script>
-  import YnCollapseTransition from '../../commonJs/transitions/collapse-transition';
+  import YnCollapseTransition from 'transitions/collapse-transition';
   import menuMixin from './menu-mixin';
   import Emitter from 'mixins/emitter';
   import Popper from 'utils/vue-popper';

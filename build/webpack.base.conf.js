@@ -42,6 +42,7 @@ module.exports = {
       mixins: path.resolve(__dirname, '../src/commonJs/mixins/'),
       utils: path.resolve(__dirname, '../src/commonJs/utils/'),
       directives: path.resolve(__dirname, '../src/commonJs/directives/'),
+      transitions: path.resolve(__dirname, '../src/commonJs/transitions/'),
     }
   },
   module: {
