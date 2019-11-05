@@ -23,6 +23,7 @@ import CollapseItem from './components/collapse-item'
 import Option from './components/option'
 import OptionGroup from './components/option-group'
 import Select from './components/select'
+import Switch from './components/switch'
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(install)
@@ -54,6 +55,7 @@ function install (Vue) {
   Vue.component(Option.name, Option)
   Vue.component(OptionGroup.name, OptionGroup)
   Vue.component(Select.name, Select)
+  Vue.component(Switch.name, Switch)
 }
 
 export default {
@@ -83,4 +85,5 @@ export default {
   Option,
   OptionGroup,
   Select,
+  Switch,
 }

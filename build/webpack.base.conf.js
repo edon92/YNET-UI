@@ -6,7 +6,6 @@ const vueLoaderConfig = require('./vue-loader.conf')
 const striptags = require('./strip-tags')
 const md = require('markdown-it')()
 
-console.log('baseWebpackConfig')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }

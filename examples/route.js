@@ -64,6 +64,16 @@ const routes = [
     name: 'select',
     component: Select
   },
+  {
+    path: '/switch',
+    name: 'switch',
+    component: () => import(/* webpackChunkName: "switch" */'./docs/switch.md')
+  },
+  {
+    path: '/collapse',
+    name: 'collapse',
+    component: () => import(/* webpackChunkName: "collapse" */'./docs/collapse.md')
+  },
 ]
 
 export default routes

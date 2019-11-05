@@ -44,6 +44,12 @@
         <yn-menu-item-group>
           <yn-menu-item index="/select">Select</yn-menu-item>
         </yn-menu-item-group>
+        <yn-menu-item-group>
+          <yn-menu-item index="/switch">Switch</yn-menu-item>
+        </yn-menu-item-group>
+        <yn-menu-item-group>
+          <yn-menu-item index="/collapse">Collapse</yn-menu-item>
+        </yn-menu-item-group>
       </yn-submenu>
     </yn-menu>
   </div>
